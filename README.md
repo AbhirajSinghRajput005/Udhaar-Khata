@@ -1,6 +1,6 @@
 # Udhaar Khata
 
-A Streamlit customer credit ledger with Gemini assisted voice and text entry. The bundled `ledger.db` is the uploaded database and its existing rows are retained. Startup performs additive table migrations only; it does not seed, clear, or rewrite ledger records.
+A Streamlit customer credit ledger with Gemini-assisted voice and text entry. On first run, the app creates a local SQLite database named `ledger.db` alongside `app.py`. The database is intentionally not included in this repository because it can contain customer data. If a local database already exists, startup performs additive table migrations only; it does not seed, clear, or rewrite ledger records.
 
 ## Run locally (Windows PowerShell)
 
@@ -31,4 +31,4 @@ The app asks for confirmation before saving any proposed transaction. Payments m
 
 ## Data safety
 
-`ledger.db` is the local source of truth. Back it up before replacing or moving project files. The app never invokes a reset or deletes entries. Customer phone numbers and notes are stored locally in SQLite. Keep the database private and make backups in a secure location.
+`ledger.db` is the local source of truth and is excluded from Git. Back it up before replacing or moving project files. The app never invokes a reset or deletes entries. Customer phone numbers and notes are stored locally in SQLite. Keep the database private and make backups in a secure location.
